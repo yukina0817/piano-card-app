@@ -22,7 +22,6 @@
 
 <body>
 
-```
 <button
     class="menu-button"
     onclick="location.href='index.html'">
@@ -39,22 +38,32 @@
 
 </div>
 
+<!-- カードエリア -->
 <div class="game-area">
 
     <div id="card"></div>
 
     <div id="progress">0 / 0</div>
 
-    <button
-        class="prev-button"
-        onclick="showPreviousCard()">
-        ← ひとつまえにもどる
-    </button>
+    <div class="control-buttons">
+
+        <button
+            class="prev-button"
+            onclick="showPreviousCard()">
+            ← まえへ
+        </button>
+
+        <button
+            class="next-button"
+            onclick="showRandomCard()">
+            つぎへ →
+        </button>
+
+    </div>
 
 </div>
 
 <script src="finger.js"></script>
-```
 
 </body>
 </html>

@@ -182,8 +182,20 @@ solvedCount++;
 
 updateProgress();
 
- currentIndex = randomIndex;
+currentIndex = randomIndex;
+
+/* 途中で戻っていた場合、
+   未来の履歴を削除 */
+if (historyPosition < history.length - 1) {
+
+    history = history.slice(
+        0,
+        historyPosition + 1
+    );
+}
+
 history.push(currentIndex);
+
 historyPosition = history.length - 1;
 
 card.innerHTML = `
@@ -229,24 +241,6 @@ historyPosition = -1;
 showRandomCard();
 }
 
-card.addEventListener("click", showRandomCard);
-
-let startX = 0;
-
-card.addEventListener("touchstart", (event) => {
-  startX = event.touches[0].clientX;
-});
-
-card.addEventListener("touchend", (event) => {
-
-  let endX = event.changedTouches[0].clientX;
-
-  let diff = endX - startX;
-
-  if (Math.abs(diff) > 50) {
-    showRandomCard();
-  }
-});
 function resetRemainingCards() {
 
     remainingCards = [];
@@ -275,4 +269,21 @@ function showPreviousCard() {
     card.innerHTML = `
     <img src="${currentCards[previousIndex]}" class="note-image">
     `;
+}
+function showNextCard() {
+
+    if (historyPosition < history.length - 1) {
+
+        historyPosition++;
+
+        const nextIndex = history[historyPosition];
+
+        card.innerHTML = `
+        <img src="${currentCards[nextIndex]}" class="note-image">
+        `;
+
+        return;
+    }
+
+    showRandomCard();
 }

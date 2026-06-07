@@ -10,7 +10,6 @@
 
 <body>
 
-```
 <!-- メニューへ戻る -->
 <button
     class="menu-button"
@@ -58,17 +57,25 @@
 
     <div id="progress">0 / 0</div>
 
-    <!-- 前の問題 -->
-    <button
-        class="prev-button"
-        onclick="showPreviousCard()">
-        ← ひとつまえにもどる
-    </button>
+    <div class="control-buttons">
+
+        <button
+            class="prev-button"
+            onclick="showPreviousCard()">
+            ← まえへ
+        </button>
+
+        <button
+            class="next-button"
+            onclick="showNextCard()">
+            つぎへ →
+        </button>
+
+    </div>
 
 </div>
 
 <script src="app.js"></script>
-```
 
 </body>
 </html>
