@@ -166,8 +166,8 @@ text-align: center;
 .prev-button,
 .next-button {
 
-    width: 180px;
-    height: 50px;
+    width: 160px;
+    height: 45px;
 
     border: none;
     border-radius: 12px;
@@ -175,7 +175,7 @@ text-align: center;
     background: #f8f0dc;
     color: #7a6848;
 
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 
     cursor: pointer;
@@ -337,7 +337,7 @@ and (orientation: landscape) {
 
         position: fixed;
         left: 30px;
-        top: 730px;
+        top: 700px;
     }
 
 }
